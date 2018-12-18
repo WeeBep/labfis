@@ -1,0 +1,22 @@
+.footer-contact {
+    // width: 100%;
+    padding: 20px;
+    background: darken($accent, 9);
+    text-align: center;
+
+    .footer-white {
+        color: $white;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+footer {
+    background: $dark-blue;
+    padding: 2.5em 0;
+    text-align: center;
+}
+
+.copyright {
+    margin-bottom: 0;
+}

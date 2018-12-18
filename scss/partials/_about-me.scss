@@ -1,0 +1,28 @@
+.about-me{
+    @include container;
+    @include clearfix;
+
+    margin-top: 5em;
+    margin-bottom: 5em;
+}
+
+.about-title{
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.about-subtitle{
+    text-align: center;
+    margin: 1em 0;
+
+    // La linea chiquita
+    &::after{
+        content: "";
+        width: 20%;
+        height: 1px;
+        background: rgba($dark-blue, .5);
+        display: block;
+        // Le tengo que restar margin de abajo ya que le puse por defecto margin al texto
+        margin: .8em auto -.2em;
+    }
+}

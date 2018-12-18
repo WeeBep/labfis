@@ -1,0 +1,11 @@
+#instructivos .ver-pdf, #guiasMaterias .ver-pdf{
+    display: block;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
+
+    @media (min-width: 1000px){
+        display: inline-block;
+        vertical-align: middle;
+    }
+}

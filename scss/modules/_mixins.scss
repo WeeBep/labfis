@@ -1,0 +1,38 @@
+@mixin container($width: 90%, $max-width: 50em) {
+    width: $width;
+    margin: 0 auto;
+    max-width: $max-width;
+}
+
+// Las siguientes 2 son para el menu
+@mixin easeOut {
+    transition: all 0.5s ease-out;
+}
+
+// Set text color (la diferencia entre mixin y function es que las function retornan un valor)
+@function set-text-color($color) {
+    @if (lightness($color) > 40) {
+        // Si el color es claro el texto es negro y viceversa
+        @return #000;
+    }
+
+    @else {
+        @return #fff;
+    }
+}
+
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+
+// Media Queries
+@mixin mq($width: 50em) {
+    @media(min-width: $width) {
+        // Esto va a ser reemplazado por lo que pongamos al incluir el mixin
+        @content;
+    }
+}
