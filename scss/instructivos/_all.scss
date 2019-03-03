@@ -1,27 +1,14 @@
-#instructivos .ver-pdf,
-#guiasMaterias .ver-pdf {
-  display: block;
-  width: 80%;
-  margin: auto;
-  margin-bottom: 20px;
-
-  @media (min-width: 1000px) {
-    display: inline-block;
-    vertical-align: middle;
-  }
-}
-
 #instructivos {
   .practica {
     height: auto;
 
-    a {
-      margin-bottom: 15px !important;
+    h2 {
+      margin-bottom: 40px;
     }
 
-    .btn-container {
-      margin-top: 25px;
-      width: 100%;
+    a {
+      width: 80%;
+      margin-bottom: 15px;
     }
   }
 }

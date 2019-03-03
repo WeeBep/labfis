@@ -1,0 +1,23 @@
+#bibliografia {
+  .docentes-title {
+    margin-bottom: 90px;
+  }
+
+  .about-subtitle {
+    line-height: 1.3;
+  }
+
+  .practica {
+    height: 250px;
+
+    a {
+      margin-top: 20px;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .practica {
+      height: 220px;
+    }
+  }
+}

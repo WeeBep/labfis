@@ -343,8 +343,7 @@ body {
   font-family: "Merriweather", serif;
   line-height: 1.6;
   background: #ffffff;
-  font-size: .875rem;
-  overflow-x: hidden; }
+  font-size: 0.875rem; }
   @media (min-width: 50em) {
     body {
       font-size: 1.125rem; } }
@@ -352,7 +351,9 @@ body {
 img {
   max-width: 100%; }
 
-h1, h2, p {
+h1,
+h2,
+p {
   margin-top: 0;
   margin-bottom: 1em; }
 
@@ -501,7 +502,7 @@ h2 {
     font-size: 1.7rem; } }
 
 .welcome {
-  background: url(../img/bg.png);
+  background: url(../img/assets/background.jpg);
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -509,7 +510,7 @@ h2 {
   align-items: center;
   justify-content: center;
   position: relative;
-  transition: transform ease-out .3s;
+  transition: transform ease-out 0.3s;
   -webkit-transform: translateZ(0); }
   .welcome h1 {
     font-size: 1.7rem;
@@ -833,53 +834,28 @@ footer {
   .box.active .view {
     transform: translateY(-80px) translateX(-50%); }
 
-.btn-container {
-  text-align: center;
-  margin-top: 50px; }
-  .btn-container .ver-pdf {
-    text-decoration: none;
-    font-weight: 900;
-    background: #03a6b8;
-    color: rgba(255, 255, 255, 0.95);
-    padding: 15px;
-    border-radius: 25px;
-    transition: 0.3s;
-    max-width: 300px;
-    margin: auto; }
-
 #bibliografia .docentes-title {
   margin-bottom: 90px; }
 
-#bibliografia .btn-container {
-  margin-top: 20px; }
+#bibliografia .about-subtitle {
+  line-height: 1.3; }
 
 #bibliografia .practica {
-  height: auto; }
+  height: 250px; }
+  #bibliografia .practica a {
+    margin-top: 20px; }
 
-#guias .ver-pdf {
-  display: block;
-  width: 60%;
-  margin: auto; }
-
-#instructivos .ver-pdf,
-#guiasMaterias .ver-pdf {
-  display: block;
-  width: 80%;
-  margin: auto;
-  margin-bottom: 20px; }
-  @media (min-width: 1000px) {
-    #instructivos .ver-pdf,
-    #guiasMaterias .ver-pdf {
-      display: inline-block;
-      vertical-align: middle; } }
+@media (max-width: 520px) {
+  #bibliografia .practica {
+    height: 220px; } }
 
 #instructivos .practica {
   height: auto; }
+  #instructivos .practica h2 {
+    margin-bottom: 40px; }
   #instructivos .practica a {
-    margin-bottom: 15px !important; }
-  #instructivos .practica .btn-container {
-    margin-top: 25px;
-    width: 100%; }
+    width: 80%;
+    margin-bottom: 15px; }
 
 .practicas {
   display: flex;
@@ -889,7 +865,7 @@ footer {
 
 .practica {
   width: 40%;
-  height: 180px;
+  height: 170px;
   text-align: center;
   padding: 20px;
   border-radius: 15px;
@@ -899,7 +875,7 @@ footer {
   place-items: center; }
   .practica h2 {
     font-size: 2em;
-    margin-bottom: 15px; }
+    margin-bottom: 0; }
   .practica a {
     font-size: 0.75em;
     text-decoration: none;
@@ -909,12 +885,12 @@ footer {
     padding: 10px;
     border-radius: 15px;
     transition: 0.3s;
-    display: block;
-    margin-bottom: 0px !important; }
+    width: 60%; }
     .practica a.disabled {
       cursor: default;
       background: #a7a7a7; }
   .practica p {
+    margin-top: 20px;
     color: #676767; }
 
 @media (max-width: 799px) {

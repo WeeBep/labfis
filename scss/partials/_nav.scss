@@ -1,186 +1,184 @@
 // Menu Button
 .menu-btn {
-    position: fixed;
-    z-index: 11;
-    right: 35px;
-    top: 35px;
-    cursor: pointer;
+  position: fixed;
+  z-index: 11;
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  @include easeOut;
+
+  .btn-line {
+    width: 28px;
+    height: 3px;
+    margin: 0 0 5px 0;
+    background: set-text-color($white);
     @include easeOut;
+  }
+
+  // Rotate Into X (Usar el metodo con before y after de online tutorials para que quede mejor)
+  &.close {
+    transform: rotate(180deg);
 
     .btn-line {
-        width: 28px;
-        height: 3px;
-        margin: 0 0 5px 0;
-        background: set-text-color($white);
-        @include easeOut;
+      // Line 1 - Rotate
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      // Line 2 - Hide
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      // Line 3 - Rotate
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+      }
     }
-
-    // Rotate Into X (Usar el metodo con before y after de online tutorials para que quede mejor)
-    &.close {
-        transform: rotate(180deg);
-
-        .btn-line {
-
-            // Line 1 - Rotate
-            &:nth-child(1) {
-                transform: rotate(45deg) translate(5px, 5px);
-            }
-
-            // Line 2 - Hide
-            &:nth-child(2) {
-                opacity: 0;
-            }
-
-            // Line 3 - Rotate
-            &:nth-child(3) {
-                transform: rotate(-45deg) translate(7px, -6px);
-            }
-        }
-    }
+  }
 }
 
 // Menu Overlay
 .menu {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    opacity: 0.95;
-    visibility: hidden;
-    z-index: 10;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 0.95;
+  visibility: hidden;
+  z-index: 10;
+
+  &.show {
+    visibility: visible;
+  }
+
+  // Es lo mismo que poner .menu-branding
+  &-branding,
+  &-nav {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    width: 50%;
+    height: 100vh;
+    // Esto sirve para cuando escondemos el nav que no queden los links flotando
+    overflow: hidden;
+  }
+
+  &-nav {
+    margin: 0;
+    padding: 0;
+    background: darken($white, 5);
+    list-style: none;
+    // Lo sacamos de la pagina para abajo
+    transform: translateY(-100%);
+    @include easeOut;
 
     &.show {
-        visibility: visible;
+      // Slide in from top
+      transform: translateY(0);
+    }
+  }
+
+  &-branding {
+    background: $white;
+    @include easeOut;
+    // Lo sacamos para arribba
+    transform: translateY(100%);
+
+    &.show {
+      // Slide in from bottom
+      transform: translateY(0);
     }
 
-    // Es lo mismo que poner .menu-branding
-    &-branding,
-    &-nav {
-        display: flex;
-        flex-flow: column wrap;
-        align-items: center;
-        justify-content: center;
-        float: left;
-        width: 50%;
-        height: 100vh;
-        // Esto sirve para cuando escondemos el nav que no queden los links flotando
-        overflow: hidden;
+    img {
+      width: 500px;
+    }
+  }
+
+  .nav-item {
+    // Los sacamos de la pantalla hacia la derecha
+    transform: translateX(600px);
+    @include easeOut;
+
+    &.show {
+      // Slide in from right
+      transform: translateX(0);
     }
 
-    &-nav {
-        margin: 0;
-        padding: 0;
-        background: darken($white, 5);
-        list-style: none;
-        // Lo sacamos de la pagina para abajo
-        transform: translateY(-100%);
-        @include easeOut;
-
-        &.show {
-            // Slide in from top
-            transform: translateY(0);
-        }
+    // Pagina en la que nos encontramos
+    &.current > a {
+      color: $accent;
     }
+  }
 
-    &-branding {
-        background: $white;
-        @include easeOut;
-        // Lo sacamos para arribba
-        transform: translateY(100%);
+  .nav-link {
+    display: inline-block;
+    position: relative;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    font-weight: 300;
+    color: set-text-color($white);
+    text-decoration: none;
+    @include easeOut;
 
-        &.show {
-            // Slide in from bottom
-            transform: translateY(0);
-        }
-
-        img {
-            width: 500px;
-        }
+    &:hover {
+      color: $accent;
     }
-
-    .nav-item {
-        // Los sacamos de la pantalla hacia la derecha
-        transform: translateX(600px);
-        @include easeOut;
-
-        &.show {
-            // Slide in from right
-            transform: translateX(0);
-        }
-
-        // Pagina en la que nos encontramos
-        &.current>a {
-            color: $accent;
-        }
-    }
-
-    .nav-link {
-        display: inline-block;
-        position: relative;
-        font-size: 30px;
-        text-transform: uppercase;
-        padding: 1rem 0;
-        font-weight: 300;
-        color: set-text-color($white);
-        text-decoration: none;
-        @include easeOut;
-
-        &:hover {
-            color: $accent;
-        }
-    }
+  }
 }
 
 // Delay each nav item slide by 0.1s
 @for $x from 1 through 6 {
-    .nav-item:nth-child(#{$x}) {
-        transition-delay: $x * 0.1s;
-    }
+  .nav-item:nth-child(#{$x}) {
+    transition-delay: $x * 0.1s;
+  }
 }
 
 @media (max-width: 900px) {
+  ul li:nth-child(2) {
+    display: none;
+  }
 
-    ul li:nth-child(2){
-        display: none;
+  .nav-link {
+    font-size: 18px !important;
+  }
+
+  // Menu
+  ul.menu-nav,
+  div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0;
+
+    &.show {
+      transform: translateX(0);
     }
+  }
 
-    .nav-link{
-        font-size: 18px !important;
+  .menu-nav {
+    height: 73vh;
+    transform: translateX(-100%);
+    font-size: 24px;
+  }
+
+  .menu-branding {
+    height: 27vh;
+    transform: translateX(100%);
+
+    img {
+      width: 300px;
     }
-
-    // Menu
-    ul.menu-nav,
-    div.menu-branding {
-        float: none;
-        width: 100%;
-        min-height: 0;
-
-        &.show {
-            transform: translateX(0);
-        }
-    }
-
-    .menu-nav {
-        height: 73vh;
-        transform: translateX(-100%);
-        font-size: 24px;
-    }
-
-    .menu-branding {
-        height: 27vh;
-        transform: translateX(100%);
-
-        img {
-            width: 300px;
-        }
-    }
+  }
 }
 
 @media (max-width: 500px) {
-    .menu-branding img {
-        width: 200px;
-    }
+  .menu-branding img {
+    width: 200px;
+  }
 
-    .nav-item .nav-link {
-        font-size: 1.7rem;
-    }
+  .nav-item .nav-link {
+    font-size: 1.7rem;
+  }
 }

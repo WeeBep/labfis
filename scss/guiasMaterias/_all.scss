@@ -7,7 +7,7 @@
 
 .practica {
   width: 40%;
-  height: 180px;
+  height: 170px;
   text-align: center;
   padding: 20px;
   border-radius: 15px;
@@ -18,7 +18,7 @@
 
   h2 {
     font-size: 2em;
-    margin-bottom: 15px;
+    margin-bottom: 0;
   }
 
   a {
@@ -30,8 +30,7 @@
     padding: 10px;
     border-radius: 15px;
     transition: 0.3s;
-    display: block;
-    margin-bottom: 0px !important;
+    width: 60%;
 
     &.disabled {
       cursor: default;
@@ -40,6 +39,7 @@
   }
 
   p {
+    margin-top: 20px;
     color: darken($gray, 25);
   }
 }
