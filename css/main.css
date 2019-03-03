@@ -696,9 +696,9 @@ h2 {
   /* z-index: 1; */
   place-items: center;
   animation-name: modalopen;
-  animation-duration: .6s; }
+  animation-duration: 0.6s; }
   .overlay .modal {
-    padding: .5em;
+    padding: 0.5em;
     position: relative; }
     .overlay .modal img {
       max-height: 520px;
@@ -715,9 +715,9 @@ h2 {
     height: 30px;
     position: absolute;
     top: 2em;
-    right: 2em;
+    left: 2em;
     cursor: pointer;
-    z-index: 10; }
+    z-index: 100; }
 
 @keyframes modalopen {
   from {
@@ -843,27 +843,43 @@ footer {
     color: rgba(255, 255, 255, 0.95);
     padding: 15px;
     border-radius: 25px;
-    transition: .3s;
+    transition: 0.3s;
     max-width: 300px;
     margin: auto; }
 
 #bibliografia .docentes-title {
   margin-bottom: 90px; }
 
+#bibliografia .btn-container {
+  margin-top: 20px; }
+
+#bibliografia .practica {
+  height: auto; }
+
 #guias .ver-pdf {
   display: block;
   width: 60%;
   margin: auto; }
 
-#instructivos .ver-pdf, #guiasMaterias .ver-pdf {
+#instructivos .ver-pdf,
+#guiasMaterias .ver-pdf {
   display: block;
   width: 80%;
   margin: auto;
   margin-bottom: 20px; }
   @media (min-width: 1000px) {
-    #instructivos .ver-pdf, #guiasMaterias .ver-pdf {
+    #instructivos .ver-pdf,
+    #guiasMaterias .ver-pdf {
       display: inline-block;
       vertical-align: middle; } }
+
+#instructivos .practica {
+  height: auto; }
+  #instructivos .practica a {
+    margin-bottom: 15px !important; }
+  #instructivos .practica .btn-container {
+    margin-top: 25px;
+    width: 100%; }
 
 .practicas {
   display: flex;
@@ -873,24 +889,37 @@ footer {
 
 .practica {
   width: 40%;
+  height: 180px;
   text-align: center;
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+  display: grid;
+  place-items: center; }
   .practica h2 {
-    font-size: 2em; }
+    font-size: 2em;
+    margin-bottom: 15px; }
   .practica a {
-    font-size: .75em;
+    font-size: 0.75em;
     text-decoration: none;
     font-weight: 900;
     background: #03a6b8;
     color: rgba(255, 255, 255, 0.95);
     padding: 10px;
     border-radius: 15px;
-    transition: .3s;
+    transition: 0.3s;
     display: block;
-    margin-bottom: 10px; }
+    margin-bottom: 0px !important; }
+    .practica a.disabled {
+      cursor: default;
+      background: #a7a7a7; }
+  .practica p {
+    color: #676767; }
+
+@media (max-width: 799px) {
+  .practica {
+    height: 140px; } }
 
 @media (max-width: 520px) {
   .about-me > h2 {

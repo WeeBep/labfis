@@ -1,120 +1,123 @@
-.portfolio{
-    text-align: center;
-    background: $light-gray;
-    padding: 6em 0;
+.portfolio {
+  text-align: center;
+  background: $light-gray;
+  padding: 6em 0;
 }
 
 // Esto es solo en caso de que no funcione grid en el navegador, se puede borrar tranquilamente
-.portfolio-items{
-    display: flex;
-    flex-wrap: wrap;
-    @include container($max-width: 75em);
+.portfolio-items {
+  display: flex;
+  flex-wrap: wrap;
+  @include container($max-width: 75em);
 }
 
 // Flechas galeria y modal
-.arrow{
+.arrow {
+  cursor: pointer;
+  position: absolute;
+  /* Centrar */
+  top: 50%;
+  transform: translateY(-50%);
+  border-style: solid;
+}
+
+.arrow-left {
+  /* De esta forma le damos forma triangular */
+  border-width: 10px 20px 10px 0;
+  border-color: transparent $white transparent transparent;
+  /* Pegado al borde */
+  left: 0;
+  margin-left: 15px;
+}
+
+.arrow-right {
+  border-width: 10px 0px 10px 20px;
+  border-color: transparent transparent transparent $white;
+  right: 0;
+  margin-right: 15px;
+}
+
+.galeria {
+  width: 500px;
+  max-width: 600px;
+  margin: 0 auto;
+  height: 230px;
+  position: relative;
+  border: 3px solid rgba(#000, 0.8);
+
+  .slider {
+    width: 100%;
+    height: 100%;
     cursor: pointer;
-    position: absolute;
-    /* Centrar */
-    top: 50%;
-    transform: translateY(-50%);
-    border-style: solid;
-}
 
-.arrow-left{
-    /* De esta forma le damos forma triangular */
-    border-width: 10px 20px 10px 0;
-    border-color: transparent $white transparent transparent;
-    /* Pegado al borde */
-    left: 0;
-    margin-left: 15px;
-}
-
-.arrow-right{
-    border-width: 10px 0px 10px 20px;
-    border-color: transparent transparent transparent $white;
-    right: 0;
-    margin-right: 15px;
-}
-
-.galeria{
-    width: 500px;
-    max-width: 600px;
-    margin: 0 auto;
-    height: 230px;
-    position: relative;
-    border: 3px solid rgba(#000, .8);
-
-    .slider{
-        width: 100%;
-        height: 100%;
-        cursor: pointer;
-
-        img{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
+  }
 
-    @include mq($width: 37em){
-        height: 300px;
-    }
+  @include mq($width: 37em) {
+    height: 300px;
+  }
 
-    @include mq(){
-        height: 400px;
-        width: 800px;
-    }
-
+  @include mq() {
+    height: 400px;
+    width: 800px;
+  }
 }
 
 .overlay {
-    display: none;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    /* z-index: 1; */
-    // overflow-x: hidden;
-    place-items: center;
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  /* z-index: 1; */
+  // overflow-x: hidden;
+  place-items: center;
 
-    animation-name: modalopen;
-    animation-duration: .6s;
+  animation-name: modalopen;
+  animation-duration: 0.6s;
 
-    .modal{
-        padding: .5em;
-        position: relative;
+  .modal {
+    padding: 0.5em;
+    position: relative;
 
-        img{
-            max-height: 520px;
-            object-fit: cover;
-        }
-
-        @include mq(){
-            padding: 3em;
-
-            img{
-                width: calc(100% - 6em);
-                max-width: 1100px;
-                max-height: 600px;
-            }
-        }
+    img {
+      max-height: 520px;
+      object-fit: cover;
     }
 
-    .modal-close{
-        width: 30px;
-        height: 30px;
-        position: absolute;
-        top: 2em;
-        right: 2em;
-        cursor: pointer;
-        z-index: 10;
-    }
+    @include mq() {
+      padding: 3em;
 
-    @keyframes modalopen{
-        from {opacity: 0}
-        to {opacity: 1}
+      img {
+        width: calc(100% - 6em);
+        max-width: 1100px;
+        max-height: 600px;
+      }
     }
+  }
+
+  .modal-close {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 2em;
+    left: 2em;
+    cursor: pointer;
+    z-index: 100;
+  }
+
+  @keyframes modalopen {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 }
