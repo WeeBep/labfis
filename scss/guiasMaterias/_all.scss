@@ -29,12 +29,24 @@
     color: rgba($white, 0.95);
     padding: 10px;
     border-radius: 15px;
-    transition: 0.3s;
     width: 60%;
 
     &.disabled {
       cursor: default;
       background: $gray;
+    }
+  }
+
+  .doble-btn {
+    width: 100%;
+
+    a {
+      display: inline-block;
+      width: 37%;
+
+      &:nth-child(1) {
+        margin-right: 10px;
+      }
     }
   }
 

@@ -1,1 +1,1 @@
-﻿Todo: links (inscripcion, encuesta, instructivos y bibliografia), descripcion docentes, mejorar galeria (videos listas yt), mejorar codigo y arreglar el css que es un desastre. Usar stack JAM?
+﻿Todo: links (inscripcion, encuesta, 1 instructivo), foto 1 docente. Usar stack JAM?

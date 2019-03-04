@@ -897,11 +897,17 @@ footer {
     color: rgba(255, 255, 255, 0.95);
     padding: 10px;
     border-radius: 15px;
-    transition: 0.3s;
     width: 60%; }
     .practica a.disabled {
       cursor: default;
       background: #a7a7a7; }
+  .practica .doble-btn {
+    width: 100%; }
+    .practica .doble-btn a {
+      display: inline-block;
+      width: 37%; }
+      .practica .doble-btn a:nth-child(1) {
+        margin-right: 10px; }
   .practica p {
     margin-top: 20px;
     color: #676767; }
