@@ -44,6 +44,13 @@
   }
 }
 
+#guiasMaterias {
+  // Por alguna razon no me deja poner .about-subtitle
+  .about-me > h2 {
+    font-size: 3.5em;
+  }
+}
+
 @media (max-width: 799px) {
   .practica {
     height: 140px;
@@ -51,9 +58,6 @@
 }
 
 @media (max-width: 520px) {
-  .about-me > h2 {
-    font-size: 3em;
-  }
   .practicas {
     flex-direction: column;
     align-items: center;
