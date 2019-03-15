@@ -444,7 +444,7 @@ h2 {
   .menu .nav-link {
     display: inline-block;
     position: relative;
-    font-size: 30px;
+    font-size: 28px;
     text-transform: uppercase;
     padding: 1rem 0;
     font-weight: 300;
@@ -472,11 +472,13 @@ h2 {
 .nav-item:nth-child(6) {
   transition-delay: 0.6s; }
 
+.nav-item:nth-child(7) {
+  transition-delay: 0.7s; }
+
 @media (max-width: 900px) {
-  ul li:nth-child(2) {
-    display: none; }
   .nav-link {
-    font-size: 18px !important; }
+    font-size: 16px !important;
+    padding: 0.8rem 0 !important; }
   ul.menu-nav,
   div.menu-branding {
     float: none;
@@ -499,7 +501,8 @@ h2 {
   .menu-branding img {
     width: 200px; }
   .nav-item .nav-link {
-    font-size: 1.7rem; } }
+    font-size: 0.9rem !important;
+    padding: 0.65rem 0 !important; } }
 
 .welcome {
   background: url(../img/assets/background.jpg);

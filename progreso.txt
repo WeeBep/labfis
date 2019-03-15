@@ -1,1 +1,1 @@
-﻿Todo: links (inscripcion, encuesta, 1 instructivo), foto 1 docente. Usar stack JAM?
+﻿Todo: link encuesta. Usar stack JAM?

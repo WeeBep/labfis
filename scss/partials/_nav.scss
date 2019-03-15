@@ -115,7 +115,7 @@
   .nav-link {
     display: inline-block;
     position: relative;
-    font-size: 30px;
+    font-size: 28px;
     text-transform: uppercase;
     padding: 1rem 0;
     font-weight: 300;
@@ -130,19 +130,16 @@
 }
 
 // Delay each nav item slide by 0.1s
-@for $x from 1 through 6 {
+@for $x from 1 through 7 {
   .nav-item:nth-child(#{$x}) {
     transition-delay: $x * 0.1s;
   }
 }
 
 @media (max-width: 900px) {
-  ul li:nth-child(2) {
-    display: none;
-  }
-
   .nav-link {
-    font-size: 18px !important;
+    font-size: 16px !important;
+    padding: 0.8rem 0 !important;
   }
 
   // Menu
@@ -179,6 +176,7 @@
   }
 
   .nav-item .nav-link {
-    font-size: 1.7rem;
+    font-size: 0.9rem !important;
+    padding: 0.65rem 0 !important;
   }
 }
